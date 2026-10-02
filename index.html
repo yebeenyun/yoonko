@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- 모바일 기본 설정 -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+
+  <meta name="theme-color" content="#f5f2ed" />
+
+  <!-- SNS 공유 시 표시될 정보 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="우리의 결혼식에 초대합니다" />
+  <meta property="og:description" content="소중한 분들을 모십니다." />
+  <meta property="og:image" content="images/og.jpg" />
+
+  <title>우리의 결혼식</title>
+
+  <style>
+    /* =========================================================
+       기본 설정
+    ========================================================= */
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+    :root {
+      --bg: #f7f4ef;
+      --paper: #fbfaf7;
+      --text: #292824;
+      --sub-text: #77736b;
+      --line: #dedad2;
+      --accent: #9b8771;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e9e5df;
+      color: var(--text);
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 300;
+      word-break: keep-all;
+    }
+
+    button,
+    a {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    /* PC에서는 모바일 청첩장 크기로 표시 */
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--bg);
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,.08);
+    }
+
+    /* =========================================================
+       공통
+    ========================================================= */
+
+    section {
+      position: relative;
+      padding: 80px 28px;
+      text-align: center;
+    }
+
+    .section-label {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 30px;
+      font-family: "Noto Serif KR", serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .9s ease,
+        transform .9s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 0;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.03),
+          rgba(0,0,0,.40)
+        ),
+        url("images/1.jpg") center center / cover no-repeat;
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 70px 30px 60px;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-small {
+      margin-bottom: 20px;
+      font-size: 11px;
+      letter-spacing: 4px;
+    }
+
+    .hero-names {
+      margin: 0;
+      font-family: "Noto Serif KR", serif;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 4px;
+    }
+
+    .hero-names span {
+      margin: 0 7px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .hero-date {
+      margin-top: 24px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .scroll-down {
+      margin-top: 45px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      opacity: .8;
+    }
+
+    .hero-with {
+  margin-top: 8px;
+  font-family: "Noto Serif KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  opacity: .9;
+}
+
+.hero-with span {
+  margin-left: 4px;
+  font-family: "Noto Serif KR", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.hero-and {
+  margin: 0 7px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro {
+      background: var(--paper);
+      padding-top: 95px;
+      padding-bottom: 95px;
+    }
+
+    .intro-symbol {
+      margin-bottom: 28px;
+      font-family: "Noto Serif KR", serif;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .intro-title {
+      margin: 0 0 35px;
+      font-family: "Noto Serif KR", serif;
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .intro-text {
+      margin: 0;
+      color: #65615b;
+      font-size: 14px;
+      line-height: 2.1;
+    }
+
+    .couple {
+      margin-top: 42px;
+      font-family: "Noto Serif KR", serif;
+      font-size: 15px;
+      line-height: 2.2;
+    }
+
+    .couple span {
+      color: var(--accent);
+      margin: 0 8px;
+    }
+
+    /* =========================================================
+       IMAGE
+    ========================================================= */
+
+    .single-photo {
+      padding: 0;
+      background: var(--paper);
+    }
+
+    .single-photo img {
+      /* aspect-ratio: 4 / 5; */
+      object-fit: cover;
+    }
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .gallery {
+      padding: 80px 18px;
+      background: var(--paper);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-item:active img {
+      transform: scale(1.04);
+    }
+
+    /* =========================================================
+       DATE / VENUE
+    ========================================================= */
+
+    .information {
+      background: var(--bg);
+    }
+
+    .date-box {
+      padding: 30px 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .date-main {
+      font-family: "Noto Serif KR", serif;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+
+    .date-sub {
+      margin-top: 12px;
+      color: var(--sub-text);
+      font-size: 13px;
+    }
+
+    .venue {
+      margin-top: 38px;
+    }
+
+    .venue-name {
+      font-family: "Noto Serif KR", serif;
+      font-size: 20px;
+    }
+
+    .venue-address {
+      margin-top: 10px;
+      color: var(--sub-text);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .venue-tel {
+      margin-top: 5px;
+      color: var(--sub-text);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       CALENDAR
+    ========================================================= */
+
+    .calendar {
+      margin-top: 35px;
+      padding: 25px 15px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .calendar-month {
+      margin-bottom: 18px;
+      font-family: "Noto Serif KR", serif;
+      font-size: 17px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      font-size: 11px;
+    }
+
+    .calendar-grid div {
+      padding: 8px 0;
+    }
+
+    .calendar-head {
+      color: #aaa59d;
+    }
+
+    .calendar-wedding {
+      position: relative;
+      color: white;
+      z-index: 1;
+    }
+
+    .calendar-wedding::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--accent);
+      z-index: -1;
+    }
+
+    /* =========================================================
+       MAP
+    ========================================================= */
+
+    .map-section {
+      padding-bottom: 65px;
+    }
+
+    .map {
+      width: 100%;
+      height: 250px;
+      margin-top: 30px;
+      background:
+        linear-gradient(
+          135deg,
+          #e9e6df,
+          #dcd8d0
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #88837b;
+      font-size: 12px;
+    }
+
+    .map-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .map-button {
+      padding: 14px 5px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: #5e5a54;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       ACCOUNT
+    ========================================================= */
+
+    .account {
+      background: #eeebe5;
+    }
+
+    .account-message {
+      margin: 0 0 28px;
+      color: var(--sub-text);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .account-list {
+      text-align: left;
+    }
+
+    .account-item {
+      margin-bottom: 8px;
+      padding: 17px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .account-name {
+      font-size: 13px;
+    }
+
+    .account-number {
+      margin-top: 5px;
+      color: #66625b;
+      font-size: 12px;
+    }
+
+    .copy-button {
+      float: right;
+      padding: 6px 9px;
+      border: 1px solid #d6d1c9;
+      background: transparent;
+      color: #77726a;
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 65px 25px 80px;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .footer-symbol {
+      color: var(--accent);
+      font-family: "Noto Serif KR", serif;
+      font-size: 18px;
+    }
+
+    .footer-names {
+      margin-top: 18px;
+      font-family: "Noto Serif KR", serif;
+      font-size: 17px;
+    }
+
+    .copyright {
+      margin-top: 25px;
+      color: #aaa59d;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.9);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      width: 92%;
+      max-width: 480px;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 35px;
+      height: 35px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       TOP BUTTON
+    ========================================================= */
+
+    .top-button {
+      position: fixed;
+      right: max(18px, calc((100vw - 480px) / 2 + 15px));
+      bottom: 18px;
+      z-index: 100;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 50%;
+      background: rgba(255,255,255,.88);
+      color: #777;
+      font-size: 14px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+
+    .top-button.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    
+
+  </style>
+</head>
+
+<body>
+
+<div class="mobile-container">
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-small">
+        OUR WEDDING DAY
+      </div>
+
+      <h1 class="hero-names">
+  <span id="heroGroom"></span>
+  <span class="hero-and">그리고</span>
+  <span id="heroBride"></span>
+</h1>
+
+<div class="hero-with">
+  with <span>고윤</span>
+</div>
+
+      <div class="hero-date" id="heroDate"></div>
+
+      <div class="scroll-down">
+        SCROLL ↓
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       INTRO
+  ======================================================== -->
+
+  <section class="intro fade-up">
+
+    <div class="intro-symbol">
+      ♡
+    </div>
+
+    <h2 class="intro-title">
+      저희 두 사람이<br>
+      새로운 시작을 합니다.
+    </h2>
+
+    <p class="intro-text">
+      서로 다른 길을 걸어온 두 사람이<br>
+      이제 하나의 길을 함께 걸어가려 합니다.<br><br>
+
+      소중한 분들을 모시고<br>
+      저희의 첫걸음을 함께하고 싶습니다.
+    </p>
+
+    <div class="couple">
+      <span id="introGroom"></span>
+      <span>·</span>
+      <span id="introBride"></span>
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       MAIN PHOTO
+  ======================================================== -->
+
+  <section class="single-photo">
+
+    <img
+      src="images/2.jpg"
+      alt="2.jpg"
+      loading="lazy"
+    />
+
+  </section>
+
+
+  <!-- =======================================================
+       GALLERY
+  ======================================================== -->
+
+  <section class="gallery fade-up">
+
+    <div class="section-label">
+      OUR MOMENTS
+    </div>
+
+    <h2 class="section-title">
+      우리의 순간들
+    </h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="images/3.jpg" alt="3.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/4.jpg" alt="4.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/5.jpg" alt="5.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/6.jpg" alt="6.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/7.jpg" alt="7.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/8.jpg" alt="8.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/9.jpg" alt="9.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/10.jpg" alt="10.jpg" loading="lazy">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/11.jpg" alt="11.jpg" loading="lazy">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       WEDDING INFORMATION
+  ======================================================== -->
+
+  <section class="information fade-up">
+
+    <div class="section-label">
+      WEDDING DAY
+    </div>
+
+    <h2 class="section-title">
+      예식 안내
+    </h2>
+
+    <div class="date-box">
+
+      <div class="date-main" id="informationDate"></div>
+
+      <div class="date-sub" id="informationTime"></div>
+
+    </div>
+
+    <div class="venue">
+
+      <div
+        class="venue-name"
+        id="venueName"
+      ></div>
+
+      <div
+        class="venue-address"
+        id="venueAddress"
+      ></div>
+
+      <div
+        class="venue-tel"
+        id="venueTel"
+      ></div>
+
+    </div>
+
+
+    <!-- 달력 -->
+
+    <div class="calendar">
+
+      <div class="calendar-month" id="calendarMonth"></div>
+
+      <div class="calendar-grid">
+
+        <div class="calendar-head">일</div>
+        <div class="calendar-head">월</div>
+        <div class="calendar-head">화</div>
+        <div class="calendar-head">수</div>
+        <div class="calendar-head">목</div>
+        <div class="calendar-head">금</div>
+        <div class="calendar-head">토</div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       MAP
+  ======================================================== -->
+
+  <section class="map-section fade-up">
+
+    <div class="section-label">
+      LOCATION
+    </div>
+
+    <h2 class="section-title">
+      오시는 길
+    </h2>
+
+    <div
+      class="venue-name"
+      id="mapVenueName"
+    ></div>
+
+    <div
+      class="venue-address"
+      id="mapAddress"
+    ></div>
+
+
+    <!--
+      실제 카카오맵/네이버지도 API를 연결할 경우
+      아래 map 영역에 지도를 넣으면 됩니다.
+    -->
+
+    <div class="map">
+      <span>지도를 연결해주세요</span>
+    </div>
+
+
+    <div class="map-buttons">
+
+      <a
+        class="map-button"
+        id="naverMapButton"
+        href="#"
+        target="_blank"
+      >
+        네이버 지도
+      </a>
+
+      <a
+        class="map-button"
+        id="kakaoMapButton"
+        href="#"
+        target="_blank"
+      >
+        카카오맵
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       ACCOUNT
+  ======================================================== -->
+
+  <section class="account fade-up">
+
+    <div class="section-label">
+      ACCOUNT
+    </div>
+
+    <h2 class="section-title">
+      마음 전하실 곳
+    </h2>
+
+    <p class="account-message">
+      참석이 어려우신 분들을 위해<br>
+      마음을 전하실 수 있는 계좌번호를 안내드립니다.
+    </p>
+
+    <div class="account-list">
+
+      <div class="account-item">
+
+        <button
+          class="copy-button"
+          onclick="copyAccount(WEDDING.accounts.groom.number)"
+        >
+          복사
+        </button>
+
+        <div class="account-name">
+          신랑 · <span id="accountGroom"></span>
+        </div>
+
+        <div
+          class="account-number"
+          id="groomAccount"
+        ></div>
+
+      </div>
+
+
+      <div class="account-item">
+
+        <button
+          class="copy-button"
+          onclick="copyAccount(WEDDING.accounts.bride.number)"
+        >
+          복사
+        </button>
+
+        <div class="account-name">
+          신부 · <span id="accountBride"></span>
+        </div>
+
+        <div
+          class="account-number"
+          id="brideAccount"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="footer-symbol">
+      ♡
+    </div>
+
+    <div class="footer-names">
+
+      <span id="footerGroom"></span>
+
+      <span style="margin: 0 8px;">그리고</span>
+
+      <span id="footerBride"></span>
+
+    </div>
+
+    <div class="copyright">
+      THANK YOU FOR CELEBRATING WITH US
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+>
+
+  <button
+    class="lightbox-close"
+    onclick="closeLightbox()"
+  >
+    ×
+  </button>
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt=""
+  />
+
+</div>
+
+
+<!-- =========================================================
+     TOP BUTTON
+========================================================= -->
+
+<button
+  class="top-button"
+  id="topButton"
+  onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+>
+  ↑
+</button>
+
+
+<script>
+
+  /* =========================================================
+     ★ 여기만 수정하면 됩니다.
+     외부 입력값 영역
+  ========================================================= */
+
+  const WEDDING = {
+
+    /* 신랑 */
+    groomName: "고원기",
+
+    /* 신부 */
+    brideName: "윤가은",
+
+
+    /* -----------------------------------------
+       예식 날짜
+    ----------------------------------------- */
+
+    year: 2027,
+    month: 4,
+    day: 11,
+
+    /* 예식 시간 */
+    time: "오후 4시",
+
+
+    /* -----------------------------------------
+       예식장
+    ----------------------------------------- */
+
+    venueName: "더 바실리움",
+
+    venueAddress: "경기 성남시 분당구 양현로 322 코리아 디자인센터 (8층)",
+
+    venueTel:
+      "031-788-7070",
+
+
+    /* -----------------------------------------
+       지도 링크
+    ----------------------------------------- */
+
+    naverMap:
+      "https://naver.me/GOPesFwZ",
+
+    kakaoMap:
+      "https://kko.to/gPMJTGm1Nc",
+
+
+    /* -----------------------------------------
+       계좌
+    ----------------------------------------- */
+
+    accounts: {
+
+      groom: {
+        name: "고원기",
+        number: "123-456-789012 (수정)",
+        bank: "예삐은행 (수정)"
+      },
+
+      bride: {
+        name: "윤가은",
+        number: "123-456-789012 (수정)",
+        bank: "예삐은행 (수정)"
+      }
+
+    }
+
+  };
+
+
+  /* =========================================================
+     날짜 관련
+  ========================================================= */
+
+  const weddingDate = new Date(
+    WEDDING.year,
+    WEDDING.month - 1,
+    WEDDING.day
+  );
+
+
+  const weekDays = [
+    "일요일",
+    "월요일",
+    "화요일",
+    "수요일",
+    "목요일",
+    "금요일",
+    "토요일"
+  ];
+
+
+  const monthText =
+    WEDDING.year +
+    "년 " +
+    WEDDING.month +
+    "월";
+
+
+  const fullDate =
+    WEDDING.year +
+    ". " +
+    String(WEDDING.month).padStart(2, "0") +
+    ". " +
+    String(WEDDING.day).padStart(2, "0") +
+    " (" +
+    weekDays[weddingDate.getDay()].replace("요일", "") +
+    ")";
+
+
+  /* =========================================================
+     화면에 데이터 넣기
+  ========================================================= */
+
+  document.getElementById("heroGroom").textContent =
+    WEDDING.groomName;
+
+  document.getElementById("heroBride").textContent =
+    WEDDING.brideName;
+
+  document.getElementById("heroDate").textContent =
+    fullDate + " · " + WEDDING.time;
+
+
+  document.getElementById("introGroom").textContent =
+    WEDDING.groomName;
+
+  document.getElementById("introBride").textContent =
+    WEDDING.brideName;
+
+
+  document.getElementById("informationDate").textContent =
+    fullDate;
+
+  document.getElementById("informationTime").textContent =
+    WEDDING.time;
+
+
+  document.getElementById("venueName").textContent =
+    WEDDING.venueName;
+
+  document.getElementById("venueAddress").textContent =
+    WEDDING.venueAddress;
+
+  document.getElementById("venueTel").textContent =
+    WEDDING.venueTel;
+
+
+  document.getElementById("mapVenueName").textContent =
+    WEDDING.venueName;
+
+  document.getElementById("mapAddress").textContent =
+    WEDDING.venueAddress;
+
+
+  document.getElementById("calendarMonth").textContent =
+    monthText;
+
+
+  document.getElementById("accountGroom").textContent =
+    WEDDING.accounts.groom.name;
+
+  document.getElementById("accountBride").textContent =
+    WEDDING.accounts.bride.name;
+
+
+  document.getElementById("groomAccount").textContent =
+    WEDDING.accounts.groom.bank +
+    " " +
+    WEDDING.accounts.groom.number;
+
+
+  document.getElementById("brideAccount").textContent =
+    WEDDING.accounts.bride.bank +
+    " " +
+    WEDDING.accounts.bride.number;
+
+
+  document.getElementById("footerGroom").textContent =
+    WEDDING.groomName;
+
+  document.getElementById("footerBride").textContent =
+    WEDDING.brideName;
+
+
+  /* =========================================================
+     지도 링크
+  ========================================================= */
+
+  document.getElementById("naverMapButton").href =
+    WEDDING.naverMap;
+
+  document.getElementById("kakaoMapButton").href =
+    WEDDING.kakaoMap;
+
+
+  /* =========================================================
+     달력 만들기
+  ========================================================= */
+
+  function createCalendar() {
+
+    const calendarGrid =
+      document.querySelector(".calendar-grid");
+
+    const firstDay =
+      new Date(
+        WEDDING.year,
+        WEDDING.month - 1,
+        1
+      ).getDay();
+
+    const lastDate =
+      new Date(
+        WEDDING.year,
+        WEDDING.month,
+        0
+      ).getDate();
+
+
+    /*
+      헤더 7개를 제외한 기존 날짜 영역을 삭제
+    */
+
+    while (calendarGrid.children.length > 7) {
+      calendarGrid.removeChild(
+        calendarGrid.lastChild
+      );
+    }
+
+
+    /*
+      첫 번째 날짜 이전 빈칸
+    */
+
+    for (let i = 0; i < firstDay; i++) {
+
+      const empty =
+        document.createElement("div");
+
+      calendarGrid.appendChild(empty);
+
+    }
+
+
+    /*
+      날짜 생성
+    */
+
+    for (let day = 1; day <= lastDate; day++) {
+
+      const date =
+        document.createElement("div");
+
+      date.textContent = day;
+
+
+      if (day === WEDDING.day) {
+
+        date.classList.add(
+          "calendar-wedding"
+        );
+
+      }
+
+
+      calendarGrid.appendChild(date);
+
+    }
+
+  }
+
+  createCalendar();
+
+
+  /* =========================================================
+     스크롤 애니메이션
+  ========================================================= */
+
+  const fadeElements =
+    document.querySelectorAll(".fade-up");
+
+
+  const observer =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.15
+      }
+
+    );
+
+
+  fadeElements.forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+
+  /* =========================================================
+     갤러리 Lightbox
+  ========================================================= */
+
+  const galleryImages =
+    document.querySelectorAll(
+      ".gallery-item img"
+    );
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  const lightboxImage =
+    document.getElementById(
+      "lightboxImage"
+    );
+
+
+  galleryImages.forEach(image => {
+
+    image.addEventListener(
+      "click",
+      () => {
+
+        lightboxImage.src =
+          image.src;
+
+        lightbox.classList.add(
+          "active"
+        );
+
+        document.body.style.overflow =
+          "hidden";
+
+      }
+    );
+
+  });
+
+
+  function closeLightbox() {
+
+    lightbox.classList.remove(
+      "active"
+    );
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+
+  lightbox.addEventListener(
+    "click",
+    (event) => {
+
+      if (
+        event.target === lightbox
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     계좌번호 복사
+  ========================================================= */
+
+  function copyAccount(number) {
+
+    navigator.clipboard
+      .writeText(number)
+      .then(() => {
+
+        alert(
+          "계좌번호가 복사되었습니다."
+        );
+
+      })
+      .catch(() => {
+
+        alert(
+          "계좌번호: " + number
+        );
+
+      });
+
+  }
+
+
+  /* =========================================================
+     TOP 버튼
+  ========================================================= */
+
+  const topButton =
+    document.getElementById(
+      "topButton"
+    );
+
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      if (window.scrollY > 500) {
+
+        topButton.classList.add(
+          "show"
+        );
+
+      } else {
+
+        topButton.classList.remove(
+          "show"
+        );
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     이미지 드래그 방지
+  ========================================================= */
+
+  document.addEventListener(
+    "dragstart",
+    event => {
+
+      if (
+        event.target.tagName === "IMG"
+      ) {
+
+        event.preventDefault();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     더블탭 확대 방지
+  ========================================================= */
+
+  let lastTouchEnd = 0;
+
+  document.addEventListener(
+    "touchend",
+    event => {
+
+      const now =
+        Date.now();
+
+      if (
+        now - lastTouchEnd <= 300
+      ) {
+
+        event.preventDefault();
+
+      }
+
+      lastTouchEnd = now;
+
+    },
+    false
+  );
+
+</script>
+
+</body>
+</html>
